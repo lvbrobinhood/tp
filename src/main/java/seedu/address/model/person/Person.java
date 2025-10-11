@@ -26,22 +26,23 @@ public class Person {
     private final Address address;
     private final Set<Class> classes = new HashSet<>();
     private final Set<Tag> tags = new HashSet<>();
-    private final String paymentStatus;
+    private final Payment paymentStatus;
+    private final Attendance attendance;
 
     /**
      * Every field must be present and not null.
      */
-    public Person(Name name, Phone phone, Email email, Role role, Address address,
+    /*public Person(Name name, Phone phone, Email email, Role role, Address address,
                   Set<Class> classes, Set<Tag> tags) {
-        this(name, phone, email, role, address, classes, tags, "unpaid"); // 调用重载构造函数
-    }
+        this(name, phone, email, role, address, classes, tags, "unpaid");
+    }*/
 
     /**
      * Constructor with payment status.
      */
     public Person(Name name, Phone phone, Email email, Role role, Address address,
-                  Set<Class> classes, Set<Tag> tags, String paymentStatus) {
-        requireAllNonNull(name, phone, email, role, address, classes, tags);
+                  Set<Class> classes, Set<Tag> tags, Payment paymentStatus, Attendance attendance) {
+        requireAllNonNull(name, phone, email, role, address, classes, tags, paymentStatus, attendance);
         this.name = name;
         this.phone = phone;
         this.email = email;
@@ -49,7 +50,8 @@ public class Person {
         this.address = address;
         this.classes.addAll(classes);
         this.tags.addAll(tags);
-        this.paymentStatus = paymentStatus != null ? paymentStatus : "unpaid";
+        this.paymentStatus = paymentStatus;
+        this.attendance = attendance;
     }
 
     public Name getName() {
@@ -91,9 +93,11 @@ public class Person {
     /**
      * Returns the payment status of this person.
      */
-    public String getPaymentStatus() {
+    public Payment getPaymentStatus() {
         return paymentStatus;
     }
+
+    public Attendance getAttendance() { return attendance; }
 
     /**
      * Returns true if both persons have the same name and phone number.
@@ -132,13 +136,13 @@ public class Person {
                 && address.equals(otherPerson.address)
                 && classes.equals(otherPerson.classes)
                 && tags.equals(otherPerson.tags)
-                && paymentStatus.equals(otherPerson.paymentStatus); // 新增比较
+                && paymentStatus.equals(otherPerson.paymentStatus);
     }
 
     @Override
     public int hashCode() {
         // use this method for custom fields hashing instead of implementing your own
-        return Objects.hash(name, phone, email, role, address, classes, tags, paymentStatus); // 新增
+        return Objects.hash(name, phone, email, role, address, classes, tags, paymentStatus);
     }
 
     @Override

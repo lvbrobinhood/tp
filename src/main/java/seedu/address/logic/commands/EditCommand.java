@@ -22,8 +22,10 @@ import seedu.address.logic.Messages;
 import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.model.Model;
 import seedu.address.model.person.Address;
+import seedu.address.model.person.Attendance;
 import seedu.address.model.person.Email;
 import seedu.address.model.person.Name;
+import seedu.address.model.person.Payment;
 import seedu.address.model.person.Person;
 import seedu.address.model.person.Phone;
 import seedu.address.model.tag.Tag;
@@ -100,10 +102,12 @@ public class EditCommand extends Command {
         Email updatedEmail = editPersonDescriptor.getEmail().orElse(personToEdit.getEmail());
         Address updatedAddress = editPersonDescriptor.getAddress().orElse(personToEdit.getAddress());
         Set<Tag> updatedTags = editPersonDescriptor.getTags().orElse(personToEdit.getTags());
+        Payment updatedPayment = editPersonDescriptor.getPayment().orElse(personToEdit.getPaymentStatus());
+        Attendance attendance = editPersonDescriptor.getAttendance().orElse(personToEdit.getAttendance());
 
         // Role and classes cannot be edited, so we keep the original values
         return new Person(updatedName, updatedPhone, updatedEmail, personToEdit.getRole(),
-                updatedAddress, personToEdit.getClasses(), updatedTags);
+                updatedAddress, personToEdit.getClasses(), updatedTags, updatedPayment, attendance);
     }
 
     @Override
@@ -140,6 +144,8 @@ public class EditCommand extends Command {
         private Email email;
         private Address address;
         private Set<Tag> tags;
+        private Payment paymentStatus;
+        private Attendance attendance;
 
         public EditPersonDescriptor() {}
 
@@ -192,6 +198,22 @@ public class EditCommand extends Command {
 
         public Optional<Address> getAddress() {
             return Optional.ofNullable(address);
+        }
+
+        public void setPayment(Payment paymentStatus) {
+            this.paymentStatus = paymentStatus;
+        }
+
+        public Optional<Payment> getPayment() {
+            return Optional.ofNullable(paymentStatus);
+        }
+
+        public void setAttendance(Attendance attendanceStatus) {
+            this.attendance = attendanceStatus;
+        }
+
+        public Optional<Attendance> getAttendance() {
+            return Optional.ofNullable(attendance);
         }
 
         /**
