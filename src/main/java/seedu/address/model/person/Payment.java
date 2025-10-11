@@ -16,14 +16,14 @@ public class Payment {
     public Payment(String paymentStatus) {
         requireNonNull(paymentStatus);
         String trimmedPaymentStatus = paymentStatus.trim().toLowerCase();
-        checkArgument(isValidRole(trimmedPaymentStatus), MESSAGE_CONSTRAINTS);
+        checkArgument(isValidPayment(trimmedPaymentStatus), MESSAGE_CONSTRAINTS);
         value = trimmedPaymentStatus;
     }
 
     /**
      * Returns true if a given string is a valid payment status.
      */
-    public static boolean isValidRole(String test) {
+    public static boolean isValidPayment(String test) {
         return test.matches(VALIDATION_REGEX);
     }
 
