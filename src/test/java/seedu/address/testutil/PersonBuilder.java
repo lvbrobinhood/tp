@@ -4,9 +4,11 @@ import java.util.HashSet;
 import java.util.Set;
 
 import seedu.address.model.person.Address;
+import seedu.address.model.person.Attendance;
 import seedu.address.model.person.Class;
 import seedu.address.model.person.Email;
 import seedu.address.model.person.Name;
+import seedu.address.model.person.Payment;
 import seedu.address.model.person.Person;
 import seedu.address.model.person.Phone;
 import seedu.address.model.person.Role;
@@ -24,6 +26,7 @@ public class PersonBuilder {
     public static final String DEFAULT_ROLE = "student";
     public static final String DEFAULT_ADDRESS = "123, Jurong West Ave 6, #08-111";
     public static final String DEFAULT_CLASS = "s4mon1600";
+    public static final String DEFAULT_PAYMENT_STATUS = "unpaid";
 
     private Name name;
     private Phone phone;
@@ -32,6 +35,8 @@ public class PersonBuilder {
     private Address address;
     private Set<Class> classes;
     private Set<Tag> tags;
+    private Payment paymentStatus;
+    private Attendance attendance;
 
     /**
      * Creates a {@code PersonBuilder} with the default details.
@@ -45,6 +50,8 @@ public class PersonBuilder {
         classes = new HashSet<>();
         classes.add(new Class(DEFAULT_CLASS));
         tags = new HashSet<>();
+        paymentStatus = new Payment(DEFAULT_PAYMENT_STATUS);
+        attendance = new Attendance();
     }
 
     /**
@@ -117,7 +124,7 @@ public class PersonBuilder {
     }
 
     public Person build() {
-        return new Person(name, phone, email, role, address, classes, tags);
+        return new Person(name, phone, email, role, address, classes, tags, paymentStatus, attendance);
     }
 
 }
