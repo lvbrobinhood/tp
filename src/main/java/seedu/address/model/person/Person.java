@@ -89,7 +89,12 @@ public class Person {
         return paymentStatus;
     }
 
-    public Attendance getAttendance() { return attendance; }
+    /**
+     * Returns the attendance of this person.
+     */
+    public Attendance getAttendance() {
+        return attendance;
+    }
 
     /**
      * Returns true if both persons have the same name and phone number.
