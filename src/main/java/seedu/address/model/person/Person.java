@@ -30,14 +30,6 @@ public class Person {
     private final Attendance attendance;
 
     /**
-     * Every field must be present and not null.
-     */
-    /*public Person(Name name, Phone phone, Email email, Role role, Address address,
-                  Set<Class> classes, Set<Tag> tags) {
-        this(name, phone, email, role, address, classes, tags, "unpaid");
-    }*/
-
-    /**
      * Constructor with payment status.
      */
     public Person(Name name, Phone phone, Email email, Role role, Address address,
