@@ -1,5 +1,13 @@
 package seedu.address.model.person;
 
+/**
+ * Represents a Person's attendance record in the address book.
+ * <p>
+ * This class is a placeholder and currently a work in progress.
+ * Future versions may include fields and validation for tracking
+ * attendance status (e.g., present, absent, late).
+ * </p>
+ */
 public class Attendance {
 
     public static final String MESSAGE_CONSTRAINTS =
