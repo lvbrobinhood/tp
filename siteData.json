@@ -7,11 +7,11 @@
       "headings": {
         "about-us": "About Us",
         "project-team": "Project team",
-        "john-doe": "John Doe",
-        "jane-doe": "Jane Doe",
-        "johnny-doe": "Johnny Doe",
-        "jean-doe": "Jean Doe",
-        "james-doe": "James Doe"
+        "jiang-zichen": "Jiang Zichen",
+        "yeo-yong-sheng": "Yeo Yong Sheng",
+        "low-voon-bin-robin": "Low Voon Bin Robin",
+        "siang-jun": "Siang Jun",
+        "chong-rui": "Chong Rui"
       },
       "headingKeywords": {}
     },
@@ -57,7 +57,6 @@
         "appendix-requirements": "Appendix: Requirements",
         "product-scope": "Product scope",
         "user-stories": "User stories",
-        "use-cases": "Use cases",
         "non-functional-requirements": "Non-Functional Requirements",
         "glossary": "Glossary",
         "appendix-instructions-for-manual-testing": "Appendix: Instructions for manual testing",
@@ -84,16 +83,6 @@
       "headingKeywords": {}
     },
     {
-      "src": "SettingUp.md",
-      "title": "Setting up and getting started",
-      "headings": {
-        "setting-up-and-getting-started": "Setting up and getting started",
-        "setting-up-the-project-in-your-computer": "Setting up the project in your computer",
-        "before-writing-code": "Before writing code"
-      },
-      "headingKeywords": {}
-    },
-    {
       "src": "Testing.md",
       "title": "Testing guide",
       "headings": {
@@ -107,20 +96,22 @@
       "src": "UserGuide.md",
       "title": "User Guide",
       "headings": {
-        "ab-3-user-guide": "AB-3 User Guide",
+        "tutorpal-user-guide": "TutorPal User Guide",
         "quick-start": "Quick start",
         "features": "Features",
         "viewing-help-help": "Viewing help : help",
         "adding-a-person-add": "Adding a person: add",
         "listing-all-persons-list": "Listing all persons : list",
         "editing-a-person-edit": "Editing a person : edit",
-        "locating-persons-by-name-find": "Locating persons by name: find",
+        "locating-students-and-tutors-by-name-find": "Locating students and tutors by name: find",
+        "marking-attendance-for-students-mark": "Marking attendance for students : mark",
+        "unmarking-attendance-for-students-unmark": "Unmarking attendance for students : unmark",
+        "managing-payments-pay": "Managing payments : pay",
         "deleting-a-person-delete": "Deleting a person : delete",
         "clearing-all-entries-clear": "Clearing all entries : clear",
         "exiting-the-program-exit": "Exiting the program : exit",
         "saving-the-data": "Saving the data",
         "editing-the-data-file": "Editing the data file",
-        "archiving-data-files-coming-in-v2-0": "Archiving data files [coming in v2.0]",
         "faq": "FAQ",
         "known-issues": "Known issues",
         "command-summary": "Command summary"
